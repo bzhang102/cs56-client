@@ -1,6 +1,6 @@
 package cs56.group2.contact.client.fx;
 
-import cs56.group2.contact.client.model.Contact;
+import cs56.group2.contact.client.model.SimpleContact;
 import javafx.beans.property.SimpleStringProperty;
 
 public class ContactFx {
@@ -20,15 +20,15 @@ public class ContactFx {
         cell = new SimpleStringProperty();
     }
 
-    public ContactFx(Contact contact) {
+    public ContactFx(SimpleContact simpleContact) {
         this();
 
-        this.id = contact.getId();
-        this.firstName.set(contact.getFirstName());
-        this.middleName.set(contact.getMiddleName());
-        this.lastName.set(contact.getLastName());
-        this.cell.set(contact.getCell());
-        this.email.set(contact.getEmail());
+        this.id = simpleContact.getId();
+        this.firstName.set(simpleContact.getFirstName());
+        this.middleName.set(simpleContact.getMiddleName());
+        this.lastName.set(simpleContact.getLastName());
+        this.cell.set(simpleContact.getCell());
+        this.email.set(simpleContact.getEmail());
     }
 
     public int getId() {
@@ -99,16 +99,16 @@ public class ContactFx {
         this.cell.set(cell);
     }
 
-    public Contact getContact() {
-        Contact contact = new Contact();
-        contact.setId(id);
-        contact.setFirstName(firstName.get());
-        contact.setMiddleName(middleName.get());
-        contact.setLastName(lastName.get());
-        contact.setEmail(email.get());
-        contact.setCell(cell.get());
+    public SimpleContact getContact() {
+        SimpleContact simpleContact = new SimpleContact();
+        simpleContact.setId(id);
+        simpleContact.setFirstName(firstName.get());
+        simpleContact.setMiddleName(middleName.get());
+        simpleContact.setLastName(lastName.get());
+        simpleContact.setEmail(email.get());
+        simpleContact.setCell(cell.get());
 
-        return contact;
+        return simpleContact;
     }
 
     @Override

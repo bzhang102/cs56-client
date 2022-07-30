@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Diagram>
   <ID>JAVA</ID>
-  <OriginalElement>cs56.group2.contact.client.fx.ContactFx</OriginalElement>
+  <OriginalElement>cs56.group2.simpleContact.client.fx.ContactFx</OriginalElement>
   <nodes>
-    <node x="1258.0" y="42.0">cs56.group2.contact.client.model.Contact</node>
-    <node x="37.0" y="240.5">cs56.group2.contact.client.ContactClientApplication</node>
-    <node x="880.0" y="-24.0">cs56.group2.contact.client.fx.ContactFx</node>
-    <node x="315.0" y="240.5">cs56.group2.contact.client.fx.ContactView</node>
-    <node x="521.0" y="185.0">cs56.group2.contact.client.service.ContactRestClientService</node>
+    <node x="1258.0" y="42.0">cs56.group2.contact.client.model.SimpleContactontact</node>
+    <node x="37.0" y="240.5">cs56.group2.simpleContact.client.ContactClientApplication</node>
+    <node x="880.0" y="-24.0">cs56.group2.simpleContact.client.fx.ContactFx</node>
+    <node x="315.0" y="240.5">cs56.group2.simpleContact.client.fx.ContactView</node>
+    <node x="521.0" y="185.0">cs56.group2.simpleContact.client.service.ContactRestClientService</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="cs56.group2.contact.client.fx.ContactFx" target="cs56.group2.contact.client.model.Contact" relationship="CREATE">
+    <edge source="cs56.group2.simpleContact.client.fx.ContactFx" target="cs56.group2.contact.client.model.SimpleContactontact" relationship="CREATE">
       <point x="164.0" y="0.0" />
       <point x="-112.5" y="0.0" />
     </edge>
-    <edge source="cs56.group2.contact.client.fx.ContactView" target="cs56.group2.contact.client.service.ContactRestClientService" relationship="CREATE">
+    <edge source="cs56.group2.simpleContact.client.fx.ContactView" target="cs56.group2.simpleContact.client.service.ContactRestClientService" relationship="CREATE">
       <point x="78.0" y="0.0" />
       <point x="-154.5" y="0.0" />
     </edge>
-    <edge source="cs56.group2.contact.client.service.ContactRestClientService" target="cs56.group2.contact.client.fx.ContactFx" relationship="CREATE">
+    <edge source="cs56.group2.simpleContact.client.service.ContactRestClientService" target="cs56.group2.simpleContact.client.fx.ContactFx" relationship="CREATE">
       <point x="154.5" y="0.0" />
       <point x="-164.0" y="0.0" />
     </edge>
   </edges>
   <settings layout="Hierarchic" zoom="1.446111869031378" showDependencies="true" x="752.0" y="102.48160377358488" />
   <SelectedNodes>
-    <node>cs56.group2.contact.client.ContactClientApplication</node>
+    <node>cs56.group2.simpleContact.client.ContactClientApplication</node>
   </SelectedNodes>
   <Categories>
     <Category>Fields</Category>

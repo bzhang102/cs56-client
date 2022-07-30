@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cs56.group2</groupId>
-    <artifactId>contact-client</artifactId>
+    <artifactId>simpleContact-client</artifactId>
     <version>1.0.0</version>
     <description>client for group2 cs56 final project</description>
 

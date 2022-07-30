@@ -3,10 +3,11 @@ package cs56.group2.contact.client.service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import cs56.group2.contact.client.fx.ContactFx;
-import cs56.group2.contact.client.model.Contact;
+import cs56.group2.contact.client.model.SimpleContact;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -45,14 +46,14 @@ public class ContactRestClientService {
                 throw new IOException("Error getting response from Contact Server, response = " + response.getStatusLine());
             }
 
-            List<Contact> contacts = mapper.readValue(response.getEntity().getContent(), new TypeReference<List<Contact>>() {
+            List<SimpleContact> simpleContacts = mapper.readValue(response.getEntity().getContent(), new TypeReference<List<SimpleContact>>() {
             });
 
-            LOGGER.info("Successfully GET {} contacts from server: {}", contacts.size(), contacts);
+            LOGGER.info("Successfully GET {} contacts from server: {}", simpleContacts.size(), simpleContacts);
 
-            List<ContactFx> contactFxes = new ArrayList<>(contacts.size());
-            for (Contact contact : contacts) {
-                ContactFx contactFx = new ContactFx(contact);
+            List<ContactFx> contactFxes = new ArrayList<>(simpleContacts.size());
+            for (SimpleContact simpleContact : simpleContacts) {
+                ContactFx contactFx = new ContactFx(simpleContact);
 
                 contactFxes.add(contactFx);
             }
@@ -62,12 +63,12 @@ public class ContactRestClientService {
     }
 
     public void updateAllContacts(List<ContactFx> contactFxes) throws IOException {
-        List<Contact> contacts = new ArrayList<>(contactFxes.size());
+        List<SimpleContact> simpleContacts = new ArrayList<>(contactFxes.size());
         for (ContactFx contactFx : contactFxes) {
-            contacts.add(contactFx.getContact());
+            simpleContacts.add(contactFx.getContact());
         }
 
-        String body = mapper.writeValueAsString(contacts);
+        String body = mapper.writeValueAsString(simpleContacts);
 
         LOGGER.info("body to be POST to server: {}", body);
 
